@@ -21,7 +21,7 @@ publishing {
             // Tên artifactId sẽ là tên repo (ví dụ: my-library-aar)
 
             // Chỉ định artifact là file .arr trong thư mục libs
-            artifact(file("libs/EncryptService.arr")) {
+            artifact(project.file("libs/EncryptService.arr")) { // Sử dụng 'project.file(...)'
                 extension = "aar"
             }
 
