@@ -3,6 +3,13 @@ plugins {
     `maven-publish` // Chỉ cần plugin này
 }
 
+tasks.register("assemble") {
+    // Không làm gì cả, chỉ là task rỗng
+    doLast {
+        println("Skipping standard assembly for pre-built AAR.")
+    }
+}
+
 // Các giá trị này rất quan trọng
 // JitPack sẽ dùng 'group' và 'version' này
 group = "com.github.quyetnv9pay" // Thay bằng username của bạn
