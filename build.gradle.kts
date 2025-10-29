@@ -15,24 +15,13 @@ tasks.register("assemble") {
 group = "com.github.quyetnv9pay" // Thay bằng username của bạn
 version = "1.0.0" // Phiên bản bạn muốn
 
-// Thêm khối configurations này
-configurations {
-    create("archives")
-}
-
-// Thêm artifact file vào configurations archives
-artifacts {
-    add("archives", file("libs/EncryptService.arr"))
-}
-
 publishing {
     publications {
         create<MavenPublication>("release") {
+            // Tên artifactId sẽ là tên repo (ví dụ: my-library-aar)
 
-            from(components.java)
-
-            // Thêm file .arr của bạn như một dependency đặc biệt
-            artifact(file("libs/EncryptService.arr")) {
+            // Chỉ định artifact là file .arr trong thư mục libs
+            artifact(file("libs/EncryptService.aar")) {
                 extension = "aar"
             }
 
